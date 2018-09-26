@@ -1,2 +1,2 @@
-* Investigate urxvt, gruvbox color for vi
+* Investigate urxvt, gruvbox color for vim/tmux
 * Install ag
