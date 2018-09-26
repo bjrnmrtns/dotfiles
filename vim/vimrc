@@ -3,12 +3,18 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 " Vundle itself
 Plugin 'VundleVim/Vundle.Vim'
-
 " Other Plugins
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'morhetz/gruvbox'
+call vundle#end()
+
+if has("autocmd")
+    filetype plugin indent on
+endif
+
+colorscheme gruvbox
 
 set syntax=on
 set tabstop=4
@@ -23,4 +29,3 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 
-call vundle#end()
