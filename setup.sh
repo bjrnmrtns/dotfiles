@@ -14,3 +14,4 @@ DOTFILES="$(dirname $(readlink -f $0))"
 VIMHOME=${HOME}/.vim
 
 ln -s ${DOTFILES}/vim ${VIMHOME}
+ln -s ${DOTFILES}/tmux/tmux.conf ${HOME}/.tmux.conf
