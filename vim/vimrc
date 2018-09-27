@@ -7,7 +7,7 @@ if has("autocmd")
     filetype plugin indent on
 endif
 
-" Loading gruvbox color scheme
+" Load gruvbox color scheme
 let g:gruvbox_contrast_dark = "soft"
 set t_Co=256
 set background=dark
@@ -28,3 +28,4 @@ nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set number
