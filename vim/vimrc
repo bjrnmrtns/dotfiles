@@ -8,7 +8,9 @@ if has("autocmd")
 endif
 
 " Loading gruvbox color scheme
+let g:gruvbox_contrast_dark = "soft"
 set t_Co=256
+set background=dark
 colorscheme gruvbox
 if has("syntax")
     syntax on
