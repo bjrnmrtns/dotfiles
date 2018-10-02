@@ -28,6 +28,7 @@ nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set list
 set number
 
 " Ultisnips configuration
