@@ -29,3 +29,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
+
+" Ultisnips configuration
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
