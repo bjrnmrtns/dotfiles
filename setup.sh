@@ -8,7 +8,10 @@ print_error() {
 
 trap print_error ERR
 
-DOTFILES="$(dirname $(readlink -f $0))"
+# This used to be $(readlink -f), but mac does not support that
+# without installing coreutils. Therfore using $(pwd), which
+# makes this script only callable from its directory.
+DOTFILES=$(pwd)
 
 # Ubuntu 18.04 locations
 VIMHOME=${HOME}/.vim
