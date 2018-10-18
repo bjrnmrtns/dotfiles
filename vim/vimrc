@@ -30,6 +30,8 @@ set shiftwidth=4
 set expandtab
 set list
 set number
+set timeoutlen=300
+:imap jj <Esc>
 
 " Ultisnips configuration
 let g:UltiSnipsExpandTrigger="<tab>"
