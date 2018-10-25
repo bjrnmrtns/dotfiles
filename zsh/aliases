@@ -1,6 +1,12 @@
 #!/bin/bash
+
+function ff() {
+    find / -name "$1" 2>/dev/null
+}
+
 alias gg='git status'
 alias e='vim'
 alias b='cmake --build .'
 alias ss='source ~/.bashrc'
 alias cmake-list-projects='find -name CMakeLists.txt | xargs cat | grep project'
+alias ff='ff'
