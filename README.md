@@ -1,12 +1,15 @@
 # Setup
 
+## General
+Install zsh tmux
+Run ./setup.sh from this directory.
+
 ## MacOS
 Install iterm2
-Type Command-i -> colors -> color presets -> load (dotfiles/iterm2/gruvbox-dark.itemcolors)
+Run ./setup-mac.sh
 
 ## Linux
 Install urxvt 256 colors terminal
 
-## General
-Install zsh tmux
-Run ./setup.sh from this directory.
+## Todo
+Merge setup.sh and setup-mac.sh into one. Fix that by detecting operating system.
