@@ -12,4 +12,4 @@ Run ./setup-mac.sh
 Install urxvt 256 colors terminal
 
 ## Todo
-Merge setup.sh and setup-mac.sh into one. Fix that by detecting operating system.
+Fix status bar for tmux, should go to top and be configured
