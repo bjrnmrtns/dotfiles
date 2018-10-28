@@ -13,6 +13,12 @@ trap print_error ERR
 # makes this script only callable from its directory.
 DOTFILES=$(pwd)
 
+case ${OSTYPE} in
+    darwin*) echo "MacOS detected" ; MYOS=macos;;
+    linux*) echo "Linux detected"; MYOS=linux;;
+    *) echo "Operating system not supported"; exit 0;;
+esac
+
 # Ubuntu 18.04 locations
 VIMHOME=${HOME}/.vim
 XRESOURCES=${HOME}/.Xresources
@@ -20,14 +26,27 @@ OHMYZSHHOME=${HOME}/.oh-my-zsh
 ZSHRC=${HOME}/.zshrc
 ALIASES=${HOME}/.aliases
 
+if [ ${MYOS} == "macos" ]; then
+    echo "MacOS specific configuration"
+    # Specify the preferences directory
+    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "./iterm2"
+    # Tell iTerm2 to use the custom preferences in the directory
+    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+fi
+
+if [ ${MYOS} == "linux" ]; then
+    echo "Linux specific configuration"
+    if [ ! -e ${XRESOURCES} ]; then
+        ln -s ${DOTFILES}/Xresources/gruvbox-dark.xresources ${XRESOURCES}
+    fi
+fi
+
+echo "Generic configuration"
 if [ ! -e ${VIMHOME} ]; then
     ln -s ${DOTFILES}/vim ${VIMHOME}
 fi
 if [ ! -e ${HOME}/.tmux.conf ]; then
     ln -s ${DOTFILES}/tmux/tmux.conf ${HOME}/.tmux.conf
-fi
-if [ ! -e ${XRESOURCES} ]; then
-    ln -s ${DOTFILES}/Xresources/gruvbox-dark.xresources ${XRESOURCES}
 fi
 if [ ! -e ${OHMYZSHHOME} ]; then
     ln -s ${DOTFILES}/zsh/oh-my-zsh ${OHMYZSHHOME}
