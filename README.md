@@ -12,3 +12,4 @@ Run ./setup.sh from this directory.
 
 ## Todo
 Fix status bar for tmux, should go to top and be configured
+Check clang_complete with compile_commands generated from cmake
