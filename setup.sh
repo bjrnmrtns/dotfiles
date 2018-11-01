@@ -39,6 +39,7 @@ if [ ${MYOS} == "linux" ]; then
     if [ ! -e ${XRESOURCES} ]; then
         ln -s ${DOTFILES}/Xresources/gruvbox-dark.xresources ${XRESOURCES}
     fi
+    sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt
 fi
 
 echo "Generic configuration"
