@@ -4,9 +4,15 @@ function ff() {
     find / -name "$1" 2>/dev/null
 }
 
+function gitstat() {
+    git shortlog -s -n --all --no-merges
+}
+
 alias gg='git status'
 alias e='vim'
 alias b='cmake --build .'
 alias ss='source ~/.bashrc'
 alias cmake-list-projects='find -name CMakeLists.txt | xargs cat | grep project'
 alias ff='ff'
+alias gitstat='gitstat'
+# search and replace in file -> find -name \*.cpp | xargs sed -i -e 's/MATCH/REPLACEMENT/g'
