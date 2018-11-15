@@ -4,8 +4,8 @@ function ff() {
     find / -name "$1" 2>/dev/null
 }
 
-function compile() {
-    clang++ -std=c++17 -Weverything -o ${1} ${1}.cpp
+function cr() {
+    clang++ -std=c++14 -Wall -Wextra -Wpedantic -o ${1} ${1}.cpp && ./${1}
 }
 
 function gitstat() {
@@ -17,7 +17,5 @@ alias e='vim'
 alias b='cmake --build .'
 alias ss='source ~/.zshrc'
 alias cmake-list-projects='find -name CMakeLists.txt | xargs cat | grep project'
-alias ff='ff'
-alias c='compile'
 alias gitstat='gitstat'
 # search and replace in file -> find -name \*.cpp | xargs sed -i -e 's/MATCH/REPLACEMENT/g'
