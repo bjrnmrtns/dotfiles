@@ -15,7 +15,7 @@ function gitstat() {
 alias gg='git status'
 alias e='vim'
 alias b='cmake --build .'
-alias ss='source ~/.bashrc'
+alias ss='source ~/.zshrc'
 alias cmake-list-projects='find -name CMakeLists.txt | xargs cat | grep project'
 alias ff='ff'
 alias c='compile'
