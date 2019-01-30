@@ -4,8 +4,12 @@ function ff() {
     find / -name "$1" 2>/dev/null
 }
 
-function cr() {
-    clang++ -std=c++14 -Wall -Wextra -Wpedantic -o ${1} ${1}.cpp && ./${1}
+function cmg() {
+    cmake -E make_directory build && cmake -E chdir build cmake -G Ninja .. 
+}
+
+function cmb() {
+    cmake --build build && cmake -E chdir build ctest --output-on-failure
 }
 
 function gitstat() {
