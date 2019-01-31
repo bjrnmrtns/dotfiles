@@ -25,6 +25,7 @@ XRESOURCES=${HOME}/.Xresources
 OHMYZSHHOME=${HOME}/.oh-my-zsh
 ZSHRC=${HOME}/.zshrc
 ALIASES=${HOME}/.aliases
+YCMCONFIG=${HOME}/.ycm_extra_conf.py
 
 if [ ${MYOS} == "macos" ]; then
     echo "MacOS specific configuration"
@@ -57,6 +58,9 @@ if [ ! -e ${ZSHRC} ]; then
 fi
 if [ ! -e ${ALIASES} ]; then
     ln -s ${DOTFILES}/zsh/aliases ${ALIASES}
+fi
+if [ ! -e ${YCMCONFIG} ]; then
+    ln -s ${DOTFILES}/ycm_config/ycm_extra_conf.py ${YCMCONFIG}
 fi
 
 chsh -s /bin/zsh

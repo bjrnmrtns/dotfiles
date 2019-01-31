@@ -5,10 +5,10 @@ function ff() {
 }
 
 function cmg() {
-    cmake -E make_directory build && cmake -E chdir build cmake -G Ninja .. 
+    cmake -E make_directory build && cmake -E chdir build cmake -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .. 
 }
 
-function cmb() {
+function bb() {
     cmake --build build && cmake -E chdir build ctest --output-on-failure
 }
 
@@ -22,4 +22,5 @@ alias b='cmake --build .'
 alias ss='source ~/.zshrc'
 alias cmake-list-projects='find -name CMakeLists.txt | xargs cat | grep project'
 alias gitstat='gitstat'
+alias generateycm='ln -s ~/.ycm_extra_conf.py .ycm_extra_conf.py'
 # search and replace in file -> find -name \*.cpp | xargs sed -i -e 's/MATCH/REPLACEMENT/g'
