@@ -37,3 +37,6 @@ set timeoutlen=300
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+
+" YCM configuration
+let g:ycm_confirm_extra_conf = 0
