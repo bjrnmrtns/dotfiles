@@ -40,3 +40,4 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
 " YCM configuration
 let g:ycm_confirm_extra_conf = 0
+nnoremap gd :YcmCompleter GoToDefinitionElseDeclaration<cr>

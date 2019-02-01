@@ -159,7 +159,11 @@ def Settings( **kwargs ):
 
     compilation_info = database.GetCompilationInfoForFile( filename )
     if not compilation_info.compiler_flags_:
-      return {}
+      return {
+        'flags': flags,
+        'include_paths_relative_to_dir': DIR_OF_THIS_SCRIPT,
+        'override_filename': filename
+      }
 
     # Bear in mind that compilation_info.compiler_flags_ does NOT return a
     # python list, but a "list-like" StringVec object.
