@@ -22,3 +22,4 @@ alias generateycm='ln -s ~/dotfiles/ycm_config/ycm_extra_conf.py .ycm_extra_conf
 # search and replace in file -> find -name \*.cpp | xargs sed -i -e 's/MATCH/REPLACEMENT/g'
 # search for word in file and replace -> ag -0 -l --ignore-dir build MATCH | xargs -0 sed -i -e 's/MATCH/REPLACEMENT/g'
 # search for file or dir and rename -> for file in $(find -not -path "./build/*" -type d -name "*SEARCH*"); do echo ${file} | git mv ${file} `echo ${file} | sed -e 's/SEARCH/REPLACE/g'`; done
+# gdb server / gdb. gdbserver --attach localhost:1234 <PID process>. gdb <exe-locally-which is run remotely>. target remote remote-ip:1234.
