@@ -100,3 +100,6 @@ if [ -d "/opt/cmake-3.12.2-Linux-x86_64/bin" ]; then
     export PATH=/opt/cmake-3.12.2-Linux-x86_64/bin:${PATH}
 fi
 source ~/.aliases
+if [ -e ~/local-aliases ]; then
+    source ~/local-aliases
+fi

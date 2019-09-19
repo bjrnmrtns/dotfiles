@@ -26,6 +26,7 @@ OHMYZSHHOME=${HOME}/.oh-my-zsh
 ZSHRC=${HOME}/.zshrc
 ALIASES=${HOME}/.aliases
 YCMCONFIG=${HOME}/.ycm_extra_conf.py
+LEDGERRC=${HOME}/.ledgerrc
 
 if [ ${MYOS} == "macos" ]; then
     echo "MacOS specific configuration"
@@ -61,6 +62,9 @@ if [ ! -e ${ALIASES} ]; then
 fi
 if [ ! -e ${YCMCONFIG} ]; then
     ln -s ${DOTFILES}/ycm_config/ycm_extra_conf.py ${YCMCONFIG}
+fi
+if [ ! -e ${LEDGERRC} ]; then
+    ln -s ${DOTFILES}/ledger/ledgerrc ${LEDGERRC}
 fi
 
 chsh -s /bin/zsh
