@@ -27,3 +27,5 @@ alias buildrunner='while sleep 5; do cmake --build .; done'
 # search files using regex and run command -> for file in $(find -regex ".*\.\(cc\|cpp\)"); do echo $(md5sum ${file}); done
 # gdb server / gdb. gdbserver --attach localhost:1234 <PID process>. gdb <exe-locally-which is run remotely>. target remote remote-ip:1234.
 # how ldd searches -> LD_DEBUG=libs ldd <executable>
+# uncommit a last commit -> git reset --soft HEAD~1
+# set local branch to remote -> git reset --hard origin/<branch-name>
