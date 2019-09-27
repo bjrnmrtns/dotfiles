@@ -22,11 +22,11 @@ esac
 # Ubuntu 18.04 locations
 VIMHOME=${HOME}/.vim
 XRESOURCES=${HOME}/.Xresources
-OHMYZSHHOME=${HOME}/.oh-my-zsh
 ZSHRC=${HOME}/.zshrc
 ALIASES=${HOME}/.aliases
 YCMCONFIG=${HOME}/.ycm_extra_conf.py
 LEDGERRC=${HOME}/.ledgerrc
+DIRCOLORS=${HOME}/.dircolors
 
 if [ ${MYOS} == "macos" ]; then
     echo "MacOS specific configuration"
@@ -51,9 +51,6 @@ fi
 if [ ! -e ${HOME}/.tmux.conf ]; then
     ln -s ${DOTFILES}/tmux/tmux.conf ${HOME}/.tmux.conf
 fi
-if [ ! -e ${OHMYZSHHOME} ]; then
-    ln -s ${DOTFILES}/zsh/oh-my-zsh ${OHMYZSHHOME}
-fi
 if [ ! -e ${ZSHRC} ]; then
     ln -s ${DOTFILES}/zsh/zshrc ${ZSHRC}
 fi
@@ -65,6 +62,9 @@ if [ ! -e ${YCMCONFIG} ]; then
 fi
 if [ ! -e ${LEDGERRC} ]; then
     ln -s ${DOTFILES}/ledger/ledgerrc ${LEDGERRC}
+fi
+if [ ! -e ${DIRCOLORS} ]; then
+    ln -s ${DOTFILES}/zsh/dircolors.256dark ${DIRCOLORS}
 fi
 
 chsh -s /bin/zsh
