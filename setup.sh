@@ -64,7 +64,7 @@ if [ ! -e ${LEDGERRC} ]; then
     ln -s ${DOTFILES}/ledger/ledgerrc ${LEDGERRC}
 fi
 if [ ! -e ${DIRCOLORS} ]; then
-    ln -s ${DOTFILES}/zsh/dircolors.256dark ${DIRCOLORS}
+    ln -s ${DOTFILES}/zsh/dircolors.gruvbox ${DIRCOLORS}
 fi
 
 chsh -s /bin/zsh
