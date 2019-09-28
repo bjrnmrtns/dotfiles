@@ -24,9 +24,9 @@ VIMHOME=${HOME}/.vim
 XRESOURCES=${HOME}/.Xresources
 ZSHRC=${HOME}/.zshrc
 ALIASES=${HOME}/.aliases
-YCMCONFIG=${HOME}/.ycm_extra_conf.py
 LEDGERRC=${HOME}/.ledgerrc
 DIRCOLORS=${HOME}/.dircolors
+NEOVIMCONFIG=${HOME}/.config/nvim/init.vim
 
 if [ ${MYOS} == "macos" ]; then
     echo "MacOS specific configuration"
@@ -48,6 +48,9 @@ echo "Generic configuration"
 if [ ! -e ${VIMHOME} ]; then
     ln -s ${DOTFILES}/vim ${VIMHOME}
 fi
+if [ ! -e ${NEOVIMCONFIG} ]; then
+    ln -s ${DOTFILES}/vim/vimrc ${NEOVIMCONFIG}
+fi
 if [ ! -e ${HOME}/.tmux.conf ]; then
     ln -s ${DOTFILES}/tmux/tmux.conf ${HOME}/.tmux.conf
 fi
@@ -56,9 +59,6 @@ if [ ! -e ${ZSHRC} ]; then
 fi
 if [ ! -e ${ALIASES} ]; then
     ln -s ${DOTFILES}/zsh/aliases ${ALIASES}
-fi
-if [ ! -e ${YCMCONFIG} ]; then
-    ln -s ${DOTFILES}/ycm_config/ycm_extra_conf.py ${YCMCONFIG}
 fi
 if [ ! -e ${LEDGERRC} ]; then
     ln -s ${DOTFILES}/ledger/ledgerrc ${LEDGERRC}
