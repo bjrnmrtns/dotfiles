@@ -49,7 +49,7 @@ if [ ! -e ${VIMHOME} ]; then
     ln -s ${DOTFILES}/vim ${VIMHOME}
 fi
 if [ ! -e ${NEOVIMCONFIG} ]; then
-    ln -s ${DOTFILES}/vim/vimrc ${NEOVIMCONFIG}
+    ln -s ${DOTFILES}/neovim/init.vim ${NEOVIMCONFIG}
 fi
 if [ ! -e ${HOME}/.tmux.conf ]; then
     ln -s ${DOTFILES}/tmux/tmux.conf ${HOME}/.tmux.conf
