@@ -48,5 +48,7 @@ fi
 if [ -f "${HOME}/.cargo/env" ]; then
     source ${HOME}/.cargo/env
 fi
-eval $(dircolors ~/.dircolors)
+
+export CLICOLOR=1
+#eval $(dircolors ~/.dircolors)
 source ~/.aliases
