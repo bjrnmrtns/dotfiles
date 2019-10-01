@@ -25,7 +25,6 @@ XRESOURCES=${HOME}/.Xresources
 ZSHRC=${HOME}/.zshrc
 ALIASES=${HOME}/.aliases
 LEDGERRC=${HOME}/.ledgerrc
-DIRCOLORS=${HOME}/.dircolors
 NEOVIMCONFIG=${HOME}/.config/nvim/init.vim
 NEOVIMPLUGINDIR=${HOME}/.config/nvim/pack/bjorn
 
@@ -49,6 +48,10 @@ echo "Generic configuration"
 if [ ! -e ${VIMHOME} ]; then
     ln -s ${DOTFILES}/vim ${VIMHOME}
 fi
+mkdir -p ${NEOVIMPLUGINDIR}
+if [ ! -e ${NEOVIMPLUGINDIR}/start ]; then
+    ln -s ${DOTFILES}/vim/bundle ${NEOVIMPLUGINDIR}/start
+fi
 if [ ! -e ${NEOVIMCONFIG} ]; then
     ln -s ${DOTFILES}/neovim/init.vim ${NEOVIMCONFIG}
 fi
@@ -64,13 +67,5 @@ fi
 if [ ! -e ${LEDGERRC} ]; then
     ln -s ${DOTFILES}/ledger/ledgerrc ${LEDGERRC}
 fi
-if [ ! -e ${DIRCOLORS} ]; then
-    ln -s ${DOTFILES}/zsh/dircolors.gruvbox ${DIRCOLORS}
-fi
-mkdir -p ${NEOVIMPLUGINDIR}
-if [ ! -e ${NEOVIMPLUGINDIR}/start ]; then
-    ln -s ${DOTFILES}/vim/bundle ${NEOVIMPLUGINDIR}/start
-fi
-
 
 chsh -s /bin/zsh
