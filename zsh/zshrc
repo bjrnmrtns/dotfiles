@@ -2,7 +2,7 @@
 autoload -U promptinit && promptinit
 autoload -U colors && colors
 
-git_prompt() {
+git_branch_name() {
   ref=$(git symbolic-ref HEAD 2>/dev/null | cut -d'/' -f3-)
   echo $ref
 }
@@ -34,7 +34,7 @@ bindkey '^r' history-incremental-search-backward
 
 function zle-line-init zle-keymap-select {
   VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
-  RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$(git_prompt) $EPS1"
+  RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$(git_branch_name) $EPS1"
   zle reset-prompt
 }
 
