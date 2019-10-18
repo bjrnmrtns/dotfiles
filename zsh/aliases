@@ -24,6 +24,7 @@ alias buildrunner='while sleep 5; do cmake --build .; done'
 alias vi='nvim'
 alias vim='nvim'
 alias ebi='ebshell --init'
+alias dr='docker run --rm -u `id -u`:`id -u` -v $(pwd):$(pwd) -v /tmp:/cache/ccache -w $(pwd) ${1} ${2}'
 # search and replace in file -> find -name \*.cpp | xargs sed -i -e 's/MATCH/REPLACEMENT/g'
 # search for word in file and replace -> ag -0 -l --ignore-dir build MATCH | xargs -0 sed -i -e 's/MATCH/REPLACEMENT/g'
 # search for file or dir and rename -> for file in $(find -not -path "./build/*" -type d -name "*SEARCH*"); do echo ${file} | git mv ${file} `echo ${file} | sed -e 's/SEARCH/REPLACE/g'`; done
