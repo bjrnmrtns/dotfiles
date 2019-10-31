@@ -22,8 +22,6 @@ esac
 # Ubuntu 18.04 locations
 VIMHOME=${HOME}/.vim
 XRESOURCES=${HOME}/.Xresources
-ZSHRC=${HOME}/.zshrc
-ALIASES=${HOME}/.aliases
 LEDGERRC=${HOME}/.ledgerrc
 NEOVIMCONFIG=${HOME}/.config/nvim/init.vim
 NEOVIMPLUGINDIR=${HOME}/.config/nvim/pack/bjorn
@@ -45,6 +43,7 @@ if [ ${MYOS} == "linux" ]; then
 fi
 
 echo "Generic configuration"
+stow zsh
 if [ ! -e ${VIMHOME} ]; then
     ln -s ${DOTFILES}/vim ${VIMHOME}
 fi
@@ -57,12 +56,6 @@ if [ ! -e ${NEOVIMCONFIG} ]; then
 fi
 if [ ! -e ${HOME}/.tmux.conf ]; then
     ln -s ${DOTFILES}/tmux/tmux.conf ${HOME}/.tmux.conf
-fi
-if [ ! -e ${ZSHRC} ]; then
-    ln -s ${DOTFILES}/zsh/zshrc ${ZSHRC}
-fi
-if [ ! -e ${ALIASES} ]; then
-    ln -s ${DOTFILES}/zsh/aliases ${ALIASES}
 fi
 if [ ! -e ${LEDGERRC} ]; then
     ln -s ${DOTFILES}/ledger/ledgerrc ${LEDGERRC}

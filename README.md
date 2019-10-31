@@ -7,13 +7,8 @@ Install iterm2
 Install urxvt 256 colors terminal
 
 ## General
-Install zsh tmux
+Install zsh tmux neovim stow
 Run ./setup.sh from this directory.
-
-## YouCompleteMe
-cd vim/bundle/YouCompleteMe
-Install python3-dev
-python3 install.py --clang-completer (after you did git submodule --init --recursive)
 
 ## Todo
 Fix status bar for tmux, should go to top and be configured
