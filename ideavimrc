@@ -1,0 +1,2 @@
+:command !SS source ~/.ideavimrc
+nnoremap ; :action Switcher<CR>
