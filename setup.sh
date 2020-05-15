@@ -24,6 +24,7 @@ VIMHOME=${HOME}/.vim
 XRESOURCES=${HOME}/.Xresources
 LEDGERRC=${HOME}/.ledgerrc
 NEOVIMCONFIG=${HOME}/.config/nvim/init.vim
+IDEAVIMCONFIG=${HOME}/.ideavimrc
 NEOVIMPLUGINDIR=${HOME}/.config/nvim/pack/bjorn
 
 if [ ${MYOS} == "macos" ]; then
@@ -53,6 +54,9 @@ if [ ! -e ${NEOVIMPLUGINDIR}/start ]; then
 fi
 if [ ! -e ${NEOVIMCONFIG} ]; then
     ln -s ${DOTFILES}/neovim/init.vim ${NEOVIMCONFIG}
+fi
+if [ ! -e ${IDEAVIMCONFIG} ]; then
+    ln -s ${DOTFILES}/ideavimrc ${IDEAVIMCONFIG}
 fi
 if [ ! -e ${HOME}/.tmux.conf ]; then
     ln -s ${DOTFILES}/tmux/tmux.conf ${HOME}/.tmux.conf
