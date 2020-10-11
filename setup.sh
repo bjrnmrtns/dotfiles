@@ -20,6 +20,8 @@ case ${OSTYPE} in
 esac
 
 # Ubuntu 18.04 locations
+ZSHHOME=${HOME}/.zshrc
+ALIASES=${HOME}/.aliases
 VIMHOME=${HOME}/.vim
 XRESOURCES=${HOME}/.Xresources
 LEDGERRC=${HOME}/.ledgerrc
@@ -44,7 +46,6 @@ if [ ${MYOS} == "linux" ]; then
 fi
 
 echo "Generic configuration"
-stow zsh
 if [ ! -e ${VIMHOME} ]; then
     ln -s ${DOTFILES}/vim ${VIMHOME}
 fi
@@ -63,6 +64,12 @@ if [ ! -e ${HOME}/.tmux.conf ]; then
 fi
 if [ ! -e ${LEDGERRC} ]; then
     ln -s ${DOTFILES}/ledger/ledgerrc ${LEDGERRC}
+fi
+if [ ! -e ${ZSHHOME} ]; then
+    ln -s ${DOTFILES}/zsh/zshrc ${ZSHHOME}
+fi
+if [ ! -e ${ALIASES} ]; then
+    ln -s ${DOTFILES}/zsh/aliases ${ALIASES}
 fi
 
 chsh -s /bin/zsh
