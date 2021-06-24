@@ -19,8 +19,8 @@ VIMHOME=${HOME}/.vim
 if [ ! -e ${VIMHOME} ]; then
     ln -s ${DOTFILES}/vim ${VIMHOME}
 fi
-if [ ! -e ${HOME}/.tmux.conf.linux ]; then
-    ln -s ${DOTFILES}/tmux/tmux.conf.linux ${HOME}/.tmux.conf
+if [ ! -e ${HOME}/.tmux.conf ]; then
+    ln -s ${DOTFILES}/tmux/tmux.conf ${HOME}/.tmux.conf
 fi
 if [ ! -e ${ZSHHOME} ]; then
     ln -s ${DOTFILES}/zsh/zshrc ${ZSHHOME}
